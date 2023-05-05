@@ -1,6 +1,6 @@
 #include <iostream>
 
-using std::string;
+using namespace std;
 
 class Solution {
  public:
@@ -25,9 +25,8 @@ class Solution {
 };
 
 int main() {
-  std::cout << "Hello, World!" << std::endl;
   Solution solution;
-  std::cout << solution.canConstruct("fihjjjjei", "hjibagacbhadfaefdjaeaebgi")
-            << "\n";
+  cout << solution.canConstruct("fihjjjjei", "hjibagacbhadfaefdjaeaebgi")
+       << "\n";
   return 0;
 }
