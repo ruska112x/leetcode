@@ -7,8 +7,14 @@ using namespace std;
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-        set<int> s(nums.begin(), nums.end());
-        return s.size() != nums.size();
+        set<int> s;
+        for(auto i : nums) {
+            if (s.count(i) != 0) {
+                return true;
+            }
+            s.insert(i);
+        }
+        return false;
     }
 };
 
