@@ -36,7 +36,7 @@ class Solution {
         tmp = new ListNode();
       }
       if (ll1->val + ll2->val + over > 9) {
-        tmp->val = 0;
+        tmp->val = ll1->val + ll2->val + over - (ll1->val + ll2->val) % 10;
         over = (ll1->val + ll2->val) % 9;
         if (over != 0) {
           tmp->next = new ListNode();
