@@ -36,8 +36,8 @@ class Solution {
         tmp = new ListNode();
       }
       if (ll1->val + ll2->val + over > 9) {
-        tmp->val = ll1->val + ll2->val + over - (ll1->val + ll2->val) % 10;
-        over = (ll1->val + ll2->val) % 9;
+        tmp->val = (ll1->val + ll2->val + over) % 10;
+        over = (ll1->val + ll2->val + over) / 10;
         if (over != 0) {
           tmp->next = new ListNode();
         }
@@ -55,7 +55,9 @@ class Solution {
       if (!tmp) {
         tmp = new ListNode();
       }
-      tmp->val = ll1->val;
+
+      tmp->val = (ll1->val + over) % 10;
+      over = (ll1->val + over) / 10;
       ll1 = ll1->next;
       if (ll1) {
         tmp = tmp->next = new ListNode();
@@ -65,11 +67,15 @@ class Solution {
       if (!tmp) {
         tmp = new ListNode();
       }
-      tmp->val = ll2->val;
+      tmp->val = (ll2->val + over) % 10;
+      over = (ll2->val + over) / 10;
       ll2 = ll2->next;
       if (ll2) {
         tmp = tmp->next = new ListNode();
       }
+    }
+    if (tmp && over > 0) {
+      tmp->next = new ListNode(over);
     }
     return sum;
   }
