@@ -31,50 +31,40 @@ class Solution {
     int over = 0;
     ListNode* ll1 = l1;
     ListNode* ll2 = l2;
-    while (ll1 && ll2) {
-      if (!tmp) {
-        tmp = new ListNode();
-      }
-      if (ll1->val + ll2->val + over > 9) {
-        tmp->val = (ll1->val + ll2->val + over) % 10;
-        over = (ll1->val + ll2->val + over) / 10;
-        if (over != 0) {
-          tmp->next = new ListNode();
-        }
-      } else {
-        tmp->val = ll1->val + ll2->val + over;
-        if (ll1->next && ll2->next) {
-          tmp->next = new ListNode();
-        }
-      }
-      tmp = tmp->next;
-      ll1 = ll1->next;
-      ll2 = ll2->next;
-    }
     while (ll1) {
-      if (!tmp) {
-        tmp = new ListNode();
-      }
-
-      tmp->val = (ll1->val + over) % 10;
-      over = (ll1->val + over) / 10;
+      tmp->val = ll1->val;
       ll1 = ll1->next;
       if (ll1) {
-        tmp = tmp->next = new ListNode();
+        tmp->next = new ListNode();
       }
+      tmp = tmp->next;
     }
+    tmp = sum;
     while (ll2) {
-      if (!tmp) {
-        tmp = new ListNode();
-      }
-      tmp->val = (ll2->val + over) % 10;
-      over = (ll2->val + over) / 10;
+      tmp->val += ll2->val;
       ll2 = ll2->next;
-      if (ll2) {
-        tmp = tmp->next = new ListNode();
+      if (ll2 && !tmp->next) {
+        tmp->next = new ListNode();
+      }
+      tmp = tmp->next;
+    }
+    tmp = sum;
+    while (tmp) {
+      if (tmp->val + over > 9) {
+        tmp->val += over;
+        over = tmp->val / 10;
+        tmp->val %= 10;
+      } else {
+        tmp->val += over;
+        over = tmp->val / 10;
+      }
+      if (tmp->next) {
+        tmp = tmp->next;
+      } else {
+        break;
       }
     }
-    if (tmp && over > 0) {
+    if (over > 0) {
       tmp->next = new ListNode(over);
     }
     return sum;
