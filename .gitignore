@@ -1,4 +1,5 @@
 cmake-build-debug/
+./cpp/build/*
 .idea/
 .vscode/
 # Prerequisites
