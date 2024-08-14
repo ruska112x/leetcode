@@ -1,3 +1,5 @@
+package s0028
+
 class Solution {
     fun strStr(haystack: String, needle: String): Int {
         if (haystack.length < needle.length) {

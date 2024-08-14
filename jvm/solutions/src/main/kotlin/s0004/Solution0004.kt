@@ -1,3 +1,5 @@
+package s0004
+
 class Solution {
     fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {
         var i = 0
@@ -26,8 +28,8 @@ class Solution {
     }
 }
 
-val s = Solution()
-
-println(s.findMedianSortedArrays(arrayOf(1, 2).toIntArray(), arrayOf(3, 4).toIntArray()))
-println(s.findMedianSortedArrays(arrayOf(1, 3).toIntArray(), arrayOf(2).toIntArray()))
-println(s.findMedianSortedArrays(arrayOf(1, 2).toIntArray(), arrayOf(3, 4, 5, 6).toIntArray()))
+fun main() {
+    val s = Solution()
+    println(s.findMedianSortedArrays(intArrayOf(1, 3), intArrayOf(2)))
+    println(s.findMedianSortedArrays(intArrayOf(1, 2), intArrayOf(3, 4)))
+}

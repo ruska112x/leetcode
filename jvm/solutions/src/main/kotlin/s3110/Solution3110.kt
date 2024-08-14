@@ -1,3 +1,5 @@
+package s3110
+
 import kotlin.math.abs
 
 class Solution {
@@ -12,7 +14,8 @@ class Solution {
     }
 }
 
-val s = Solution()
-
-println(s.scoreOfString("hello"))
-println(s.scoreOfString("zaz"))
+fun main() {
+    val s = Solution()
+    println(s.scoreOfString("hello"))
+    println(s.scoreOfString("zaz"))
+}

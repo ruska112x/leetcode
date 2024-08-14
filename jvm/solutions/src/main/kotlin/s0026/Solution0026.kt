@@ -1,4 +1,6 @@
-import java.util.TreeSet
+package s0026
+
+import java.util.*
 
 class Solution {
     fun removeDuplicates(nums: IntArray): Int {
@@ -13,6 +15,7 @@ class Solution {
     }
 }
 
-val s = Solution()
-
-println(s.removeDuplicates(intArrayOf(0,0,1,1,1,2,2,3,3,4)))
+fun main() {
+    val s = Solution()
+    println(s.removeDuplicates(intArrayOf(0,0,1,1,1,2,2,3,3,4)))
+}

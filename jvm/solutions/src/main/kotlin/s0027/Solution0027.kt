@@ -1,3 +1,5 @@
+package s0027
+
 class Solution {
     fun removeElement(nums: IntArray, `val`: Int): Int {
         val arr = ArrayList<Int>()
@@ -13,6 +15,7 @@ class Solution {
     }
 }
 
-val s = Solution()
-
-println(s.removeElement(arrayOf(0,1,2,2,3,0,4,2).toIntArray(), 2))
+fun main() {
+    val s = Solution()
+    println(s.removeElement(arrayOf(0,1,2,2,3,0,4,2).toIntArray(), 2))
+}

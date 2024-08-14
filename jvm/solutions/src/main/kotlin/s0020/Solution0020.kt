@@ -1,4 +1,6 @@
-import java.util.Stack
+package s0020
+
+import java.util.*
 
 class Solution {
     fun isValid(s: String): Boolean {
@@ -27,9 +29,10 @@ class Solution {
     }
 }
 
-val s = Solution()
-
-println(s.isValid("()[]{}"))
-println(s.isValid("(}"))
-println(s.isValid("){"))
-println(s.isValid(")"))
+fun main() {
+    val s = Solution()
+    println(s.isValid("()[]{}"))
+    println(s.isValid("(}"))
+    println(s.isValid("){"))
+    println(s.isValid(")"))
+}

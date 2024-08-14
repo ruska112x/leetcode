@@ -1,3 +1,5 @@
+package s2582
+
 class Solution {
     fun passThePillow(n: Int, time: Int): Int {
         val p = time % (2 * n - 2);
@@ -9,7 +11,8 @@ class Solution {
     }
 }
 
-val s = Solution()
-
-println(s.passThePillow(4, 5))
-println(s.passThePillow(3, 2))
+fun main() {
+    val s = Solution()
+    println(s.passThePillow(4, 5))
+    println(s.passThePillow(3, 2))
+}
