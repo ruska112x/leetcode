@@ -1,4 +1,4 @@
-package org.karabalin.f0001t1000.f0401t0500.s0525
+package org.karabalin.f0001t1000.f0501t0600.s0525
 
 class Solution {
     fun findMaxLength(nums: IntArray): Int {
