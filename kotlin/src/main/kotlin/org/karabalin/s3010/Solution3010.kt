@@ -7,7 +7,7 @@ class Solution {
         val n = nums.size
         val s = nums[0]
         Arrays.sort(nums, 1, n)
-        return s +  nums[1] + nums[2]
+        return s + nums[1] + nums[2]
     }
 }
 
